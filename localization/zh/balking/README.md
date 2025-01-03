@@ -1,11 +1,9 @@
 ---
-layout: pattern
 title: Balking
-folder: balking
-permalink: /patterns/balking/
-categories: Concurrency
+shortTitle: Balking
+category: Concurrency
 language: zh
-tags:
+tag:
  - Decoupling
 ---
 
@@ -111,7 +109,7 @@ public interface DelayProvider {
 
 ## 类图
 
-![alt text](../../../balking/etc/balking.png "Balking")
+![alt text](./etc/balking.png "Balking")
 
 ## 适用性
 

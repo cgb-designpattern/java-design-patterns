@@ -1,11 +1,9 @@
 ---
-layout: pattern
 title: State
-folder: state
-permalink: /patterns/state/
-categories: Behavioral
+shortTitle: State
+category: Behavioral
 language: zh
-tags:
+tag:
  - Gang of Four
 ---
 
@@ -135,7 +133,7 @@ public class Mammoth {
 ```
 
 ## 类图
-![alt text](../../../state/etc/state_urm.png "State")
+![alt text](./etc/state_urm.png "State")
 
 ## 适用性
 

@@ -1,11 +1,9 @@
 ---
-layout: pattern
 title: Arrange/Act/Assert
-folder: arrange-act-assert
-permalink: /patterns/arrange-act-assert/
-categories: Idiom
+shortTitle: Arrange/Act/Assert
+category: Idiom
 language: zh
-tags:
+tag:
  - Testing
 ---
 

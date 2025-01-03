@@ -25,24 +25,12 @@
 package com.iluwatar.datatransfer.product;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * The resource class which serves product information. This class act as server in the demo. Which
  * has all product details.
  */
-public class ProductResource {
-  private final List<Product> products;
-
-  /**
-   * Initialise resource with existing products.
-   *
-   * @param products initialize resource with existing products. Act as database.
-   */
-  public ProductResource(final List<Product> products) {
-    this.products = products;
-  }
-
+public record ProductResource(List<Product> products) {
   /**
    * Get all products.
    *
@@ -54,7 +42,7 @@ public class ProductResource {
         .map(p -> new ProductDto.Response.Private().setId(p.getId()).setName(p.getName())
             .setCost(p.getCost())
             .setPrice(p.getPrice()))
-        .collect(Collectors.toList());
+        .toList();
   }
 
   /**
@@ -67,7 +55,7 @@ public class ProductResource {
         .stream()
         .map(p -> new ProductDto.Response.Public().setId(p.getId()).setName(p.getName())
             .setPrice(p.getPrice()))
-        .collect(Collectors.toList());
+        .toList();
   }
 
   /**
@@ -76,20 +64,12 @@ public class ProductResource {
    * @param createProductDto save new product to list.
    */
   public void save(ProductDto.Request.Create createProductDto) {
-    products.add(new Product()
-        .setId((long) (products.size() + 1))
-        .setName(createProductDto.getName())
-        .setSupplier(createProductDto.getSupplier())
-        .setPrice(createProductDto.getPrice())
-        .setCost(createProductDto.getCost()));
-  }
-
-  /**
-   * List of all products in an entity representation.
-   *
-   * @return : all the products entity that stored in the products list
-   */
-  public List<Product> getProducts() {
-    return products;
+    products.add(Product.builder()
+        .id((long) (products.size() + 1))
+        .name(createProductDto.getName())
+        .supplier(createProductDto.getSupplier())
+        .price(createProductDto.getPrice())
+        .cost(createProductDto.getCost())
+        .build());
   }
 }

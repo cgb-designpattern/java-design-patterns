@@ -1,11 +1,9 @@
 ---
-layout: pattern
 title: Active Object
-folder: active-object
-permalink: /patterns/active-object/
-categories: Concurrency
+shortTitle: Active Object
+category: Concurrency
 language: zh
-tags:
+tag:
  - Performance
 ---
 
@@ -122,4 +120,4 @@ public class Orc extends ActiveCreature {
 
 ## 类图
 
-![alt text](../../../active-object/etc/active-object.urm.png "Active Object class diagram")
+![alt text](./etc/active-object.urm.png "Active Object class diagram")

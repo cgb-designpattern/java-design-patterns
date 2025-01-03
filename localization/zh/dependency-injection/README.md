@@ -1,11 +1,9 @@
 ---
-layout: pattern
 title: Dependency Injection
-folder: dependency-injection
-permalink: /patterns/dependency-injection/
-categories: Creational
+shortTitle: Dependency Injection
+category: Creational
 language: zh
-tags:
+tag:
  - Decoupling
 ---
 
@@ -84,7 +82,7 @@ public class AdvancedWizard implements Wizard {
 
 ## 类图
 
-![alt text](../../../dependency-injection/etc/dependency-injection.png "Dependency Injection")
+![alt text](./etc/dependency-injection.png "Dependency Injection")
 
 ## 适用性
 

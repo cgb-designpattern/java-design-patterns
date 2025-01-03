@@ -67,15 +67,15 @@ public class App {
 
     var customerResource = new CustomerResource(customers);
 
-    LOGGER.info("All customers:-");
-    var allCustomers = customerResource.getAllCustomers();
+    LOGGER.info("All customers:");
+    var allCustomers = customerResource.customers();
     printCustomerDetails(allCustomers);
 
     LOGGER.info("----------------------------------------------------------");
 
     LOGGER.info("Deleting customer with id {1}");
-    customerResource.delete(customerOne.getId());
-    allCustomers = customerResource.getAllCustomers();
+    customerResource.delete(customerOne.id());
+    allCustomers = customerResource.customers();
     printCustomerDetails(allCustomers);
 
     LOGGER.info("----------------------------------------------------------");
@@ -83,33 +83,33 @@ public class App {
     LOGGER.info("Adding customer three}");
     var customerThree = new CustomerDto("3", "Lynda", "Blair");
     customerResource.save(customerThree);
-    allCustomers = customerResource.getAllCustomers();
+    allCustomers = customerResource.customers();
     printCustomerDetails(allCustomers);
 
     // Example 2: Product DTO
-    Product tv =
-        new Product().setId(1L).setName("TV").setSupplier("Sony").setPrice(1000D).setCost(1090D);
+
+    Product tv = Product.builder().id(1L).name("TV").supplier("Sony").price(1000D).cost(1090D).build();
     Product microwave =
-        new Product()
-            .setId(2L)
-            .setName("microwave")
-            .setSupplier("Delonghi")
-            .setPrice(1000D)
-            .setCost(1090D);
+        Product.builder()
+            .id(2L)
+            .name("microwave")
+            .supplier("Delonghi")
+            .price(1000D)
+            .cost(1090D).build();
     Product refrigerator =
-        new Product()
-            .setId(3L)
-            .setName("refrigerator")
-            .setSupplier("Botsch")
-            .setPrice(1000D)
-            .setCost(1090D);
+        Product.builder()
+            .id(3L)
+            .name("refrigerator")
+            .supplier("Botsch")
+            .price(1000D)
+            .cost(1090D).build();
     Product airConditioner =
-        new Product()
-            .setId(4L)
-            .setName("airConditioner")
-            .setSupplier("LG")
-            .setPrice(1000D)
-            .setCost(1090D);
+        Product.builder()
+            .id(4L)
+            .name("airConditioner")
+            .supplier("LG")
+            .price(1000D)
+            .cost(1090D).build();
     List<Product> products =
         new ArrayList<>(Arrays.asList(tv, microwave, refrigerator, airConditioner));
     ProductResource productResource = new ProductResource(products);
@@ -131,10 +131,10 @@ public class App {
     productResource.save(createProductRequestDto);
     LOGGER.info(
         "####### List of products after adding PS5: {}",
-        Arrays.toString(productResource.getProducts().toArray()));
+        Arrays.toString(productResource.products().toArray()));
   }
 
   private static void printCustomerDetails(List<CustomerDto> allCustomers) {
-    allCustomers.forEach(customer -> LOGGER.info(customer.getFirstName()));
+    allCustomers.forEach(customer -> LOGGER.info(customer.firstName()));
   }
 }

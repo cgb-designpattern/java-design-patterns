@@ -1,11 +1,9 @@
 ---
-layout: pattern
 title: Singleton
-folder: singleton
-permalink: /patterns/singleton/ko
-categories: Creational
+shortTitle: Singleton
+category: Creational
 language: ko
-tags:
+tag:
 - Gang of Four
 ---
 
@@ -49,7 +47,7 @@ assertEquals(enumIvoryTower1, enumIvoryTower2); // true
 
 ## 클래스 다이어그램
 
-![alt text](https://github.com/iluwatar/java-design-patterns/blob/master/singleton/etc/singleton.urm.png)
+![alt text](./etc/singleton.urm.png)
 
 ## 적용 가능성
 

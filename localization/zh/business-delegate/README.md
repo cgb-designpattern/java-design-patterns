@@ -1,11 +1,9 @@
 ---
-layout: pattern
 title: Business Delegate
-folder: business-delegate
-permalink: /patterns/business-delegate/
-categories: Structural
+shortTitle: Business Delegate
+category: Structural
 language: zh
-tags:
+tag:
  - Decoupling
 ---
 
@@ -132,7 +130,7 @@ public class MobileClient {
 
 ## 类图
 
-![alt text](../../../business-delegate/etc/business-delegate.urm.png "Business Delegate")
+![alt text](./etc/business-delegate.urm.png "Business Delegate")
 
 ## 相关模式
 
